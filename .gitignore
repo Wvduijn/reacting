@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-/react-router-app
 /.pnp
 .pnp.js
 
