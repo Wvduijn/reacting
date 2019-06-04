@@ -105,6 +105,8 @@ class Movies extends Component {
         </React.Fragment>
       );
 
+    const { user } = this.props;
+
     const { totalCount, data: movies } = this.getPagedData();
 
     return (
@@ -117,13 +119,15 @@ class Movies extends Component {
           />
         </div>
         <div className="col">
-          <Link
-            to="/movies/new"
-            className="btn btn-primary"
-            style={{ marginBottom: 20 }}
-          >
-            New Movie
-          </Link>
+          {user && (
+            <Link
+              to="/movies/new"
+              className="btn btn-primary"
+              style={{ marginBottom: 20 }}
+            >
+              New Movie
+            </Link>
+          )}
           <p>Showing {totalCount} movies in the database</p>
           <h2>Movies Component</h2>
           <SearchBox value={searchQuery} onChange={this.handleSearch} />
